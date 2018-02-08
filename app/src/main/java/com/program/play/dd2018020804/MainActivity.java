@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
     public void click1(View v)
     {
         IntentFilter filter = new IntentFilter();
-                 filter.addAction("myaction");
+                 filter.addAction(Intent.ACTION_SCREEN_ON);     //thomas 20180208 filter.addAction("myaction");
                  filter.setPriority(500);
                  registerReceiver(receiver, filter);
+        Log.d("REC", "onReceive2");
     }
 
     public void click2(View v)
